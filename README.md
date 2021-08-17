@@ -1,4 +1,4 @@
-# receita
+# Livro de receitas
 
 ## Project setup
 ```
