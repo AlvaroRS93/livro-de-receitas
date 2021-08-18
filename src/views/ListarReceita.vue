@@ -1,6 +1,6 @@
 <template>
   <div class="ma-5">
-    <h1 class="display-4 d-flex justify-center">Minha Receita</h1>
+    <h1 class="text-h4 text-sm-h3 text-md-h1 display-4 d-flex justify-center">Minha Receita</h1>
     <v-text-field
       label="Nome da receita"
       append-icon="mdi-magnify"
@@ -36,11 +36,17 @@
         </v-list-item-action>
       </v-list-item>
     </v-list>
-    <div class="ma-5 d-flex justify-end">
+    <div class="d-sm-none">
+      <v-btn block color="primary" @click="adicionarReceita">Adicionar receita</v-btn>
+    </div>
+
+    <div class="d-none d-sm-flex ma-5 justify-end">
       <v-btn color="primary" fab @click="adicionarReceita">
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </div>
+   
+
   </div>
 </template>
 
