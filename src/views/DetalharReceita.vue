@@ -1,11 +1,11 @@
 <template>
   <div class="ma-5">
-    <h1 class="display-3 d-flex justify-center">Detalhar Receita</h1>
+    <h1 class="text-h4 text-sm-h3 text-md-h1 display-3 d-flex justify-center">Detalhar Receita</h1>
     
     <v-text-field label="Título" v-model="receita.titulo" readonly></v-text-field>
 
     <v-row>
-      <v-col id="boxIngredientes" class="ma-1">
+      <v-col id="boxIngredientes" class="ma-1" cols="12" sm="6">
         <div class="grey white--text rounded-lg pa-3">Ingredientes</div>
 
         <v-list v-bind:key="ingrediente" v-for="ingrediente in receita.ingredientes">

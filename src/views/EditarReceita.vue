@@ -2,11 +2,11 @@
   <div class="ma-5">
     <v-form ref="form">
 
-        <h1 class="display-3 d-flex justify-center">{{ tituloDaTela }}</h1>
+        <h1 class="text-h4 text-sm-h3 text-md-h1 display-3 d-flex justify-center">{{ tituloDaTela }}</h1>
         <v-text-field label="Título" v-model="receita.titulo" :rules="this.regrasValidacao.titulo"></v-text-field>
 
         <v-row>
-          <v-col id="boxIngredientes" class="ma-1">
+          <v-col id="boxIngredientes" class="ma-1" cols="12" sm="6">
             <div class="grey white--text rounded-lg pa-3">Ingredientes</div>
 
             <div>
@@ -14,7 +14,7 @@
                 <v-text-field
                   v-model="novoIngrediente"
                   class="mr-6"
-                  label="Ingredientes"
+                  label="Ingredientes"                  
                 ></v-text-field>
                 <v-btn small fab outlined color="primary" class="my-auto">
                   <v-icon @click="adicionarIngrediente(novoIngrediente)"
@@ -85,13 +85,15 @@ export default {
         ingredientes: [],
         modoDePreparo: "",
       },
+      contadorIngredientes: 0,
+      teste: false,
       tituloDaTela: "",
       novoIngrediente: "",
       acao: this.$router.history.current.params.acao,
 
       regrasValidacao: {
         titulo: [v => !!v || 'O preenchimento do campo Título é obrigatório!'],
-        modoDePreparo: [v => !!v || 'O preenchimento do campo Modo de preparo é obrigatório!'],
+        modoDePreparo: [v => !!v || 'O preenchimento do campo Modo de preparo é obrigatório!'],        
       }
 
 
@@ -125,18 +127,21 @@ export default {
     },
 
     adicionarIngrediente: function (ingrediente) {
-      this.receita.ingredientes.push(ingrediente);
-      this.novoIngrediente = "";
+      if(ingrediente){
+        this.receita.ingredientes.push(ingrediente);      
+        this.novoIngrediente = "";           
+      }
+      
     },
     removerIngrediente: function (ingrediente) {
-      this.receita.ingredientes.splice(ingrediente, 1);
+      this.receita.ingredientes.splice(ingrediente, 1);           
     },
 
     validar: function(){
       if(this.$refs.form.validate()){
         this.confirmar();
       }
-    }
+    },  
   },
 };
 </script>
