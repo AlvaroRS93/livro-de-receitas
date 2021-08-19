@@ -24,8 +24,10 @@
       <router-view />
     </v-main>
   </v-app>
+  
 </template>
 
+<script data-ad-client="ca-pub-7495463853774663" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
 export default {
   name: "App",
